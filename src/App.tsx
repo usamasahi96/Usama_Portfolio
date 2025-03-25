@@ -180,6 +180,12 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {[
               {
+                icon: <Smartphone className="w-8 h-8" />,
+                title: 'React Native',
+                desc: 'Cross-platform mobile development with optimized performance.',
+                skills: ['iOS & Android', 'Native Modules', 'Performance Optimization']
+              },
+              {
                 icon: <Wallet className="w-8 h-8" />,
                 title: 'Multi-Chain Wallets',
                 desc: 'Development of single-chain and multi-chain wallets with secure asset management.',
@@ -198,18 +204,11 @@ function App() {
                 skills: ['ERC-721 & ERC-1155', 'Auction System', 'IPFS Storage']
               },
               {
-                icon: <Smartphone className="w-8 h-8" />,
-                title: 'React Native',
-                desc: 'Cross-platform mobile development with optimized performance.',
-                skills: ['iOS & Android', 'Native Modules', 'Performance Optimization']
-              },
-              {
                 icon: <Brain className="w-8 h-8" />,
                 title: 'UI/UX',
                 desc: 'Designing intuitive and engaging user experiences.',
                 skills: ['Responsive Design', 'Animation', 'User Research']
               }
-
             ].map((skill, i) => (
               <div key={i} className="p-6 rounded-xl bg-gradient-to-b from-[#693B93]/10 to-transparent border border-[#693B93]/20 hover:border-[#693B93]/40 transition-colors group">
                 <div className="text-[#9b4ed3] mb-4 group-hover:scale-110 transition-transform">{skill.icon}</div>
@@ -365,7 +364,7 @@ function App() {
             {/* Services Section */}
             {/* Services Section */}
             <div id="services" className="py-20 relative">
-              <div className="absolute inset-0 bg-gradient-to-b from-[#693B93]/10 to-transparent" />
+              
               <div className="container mx-auto px-6">
                 <h2 className="text-4xl font-bold mb-4 text-center bg-gradient-to-r from-[#9b4ed3] to-[#693B93] bg-clip-text text-transparent">
                   Development Services
@@ -383,7 +382,7 @@ function App() {
                         'Cross-platform React Native apps',
                         'Performance optimization',
                         'Native module integration',
-                        'App store deployment',
+                        'App store / playStore deployment',
                         'CI/CD pipeline setup'
                       ],
                       icon: <Smartphone className="w-8 h-8" />,
@@ -394,7 +393,7 @@ function App() {
                       title: 'Blockchain Solutions',
                       features: [
                         'Multi-chain wallet development',
-                        'Smart contract auditing',
+                        'Smart contract Intigerigation',
                         'NFT marketplace creation',
                         'DeFi protocol integration',
                         'Cross-chain bridges'
@@ -463,7 +462,7 @@ function App() {
                 {/* Service Metrics */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
                   {[
-                    { number: '50+', label: 'Projects Completed' },
+                    { number: '10+', label: 'Projects Completed' },
                     { number: '100%', label: 'Client Satisfaction' },
                     { number: '4.9/5', label: 'Average Rating' },
                     { number: '24/7', label: 'Support Available' }
