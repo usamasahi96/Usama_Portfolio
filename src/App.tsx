@@ -467,7 +467,7 @@ function App() {
           {/* Service Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
             {[
-              { number: '10+', label: 'Projects Completed' },
+              { number: '20+', label: 'Projects Completed' },
               { number: '100%', label: 'Client Satisfaction' },
               { number: '4.9/5', label: 'Average Rating' },
               { number: '24/7', label: 'Support Available' }
