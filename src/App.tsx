@@ -494,7 +494,7 @@ function App() {
               <a href="https://github.com/faheemwakee24" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#9b4ed3] transition-colors">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="https://www.linkedin.com/in/faheem-wakeel-a1b84a267/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#9b4ed3] transition-colors">
+              <a href="https://www.linkedin.com/in/faheem-wakeel-b70770275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#9b4ed3] transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
               <a href="mailto:faheemwakeel247@gmail.com" className="text-gray-400 hover:text-[#9b4ed3] transition-colors">
