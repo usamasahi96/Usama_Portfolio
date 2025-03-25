@@ -4,6 +4,9 @@ import naitramImage from './naitramImage.png'
 import magnusmobileapp from './magnusmobileapp.png'
 import GayaImage from './GayaImage.png'
 import myProfileWithBlackbackground3 from './myProfileWithBlackbackground3.jpg';
+import mobileAppDevelopment1 from './mobileAppDevelopment1.jpg'
+import WalletCreation from './WalletCreation.jpg'
+import WebApp from './WebApp.jpg'
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -26,9 +29,12 @@ function App() {
             <div className="hidden md:flex gap-8">
               <a href="#about" className="hover:text-[#9b4ed3] transition-colors">About</a>
               <a href="#experience" className="hover:text-[#9b4ed3] transition-colors">Experience</a>
+              <a href="#services" className="hover:text-[#9b4ed3] transition-colors">Services</a>
               <a href="#projects" className="hover:text-[#9b4ed3] transition-colors">Projects</a>
               <a href="#contact" className="hover:text-[#9b4ed3] transition-colors">Contact</a>
             </div>
+
+
 
             {/* Mobile Menu Button */}
             <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-2xl">
@@ -37,9 +43,11 @@ function App() {
           </div>
 
           {/* Mobile Navigation */}
+          {/* Mobile Navigation */}
           <div className={`md:hidden flex flex-col  bg-[#693B93]/80 items-center gap-4 mt-4 shadow-lg p-4 rounded-lg transition-all duration-300 backdrop-blur-md bg-white/30 ${isOpen ? "block" : "hidden"}`}>
             <a href="#about" className="hover:text-[#9b4ed3] transition-colors">About</a>
             <a href="#experience" className="hover:text-[#9b4ed3] transition-colors">Experience</a>
+            <a href="#services" className="hover:text-[#9b4ed3] transition-colors">Services</a>
             <a href="#projects" className="hover:text-[#9b4ed3] transition-colors">Projects</a>
             <a href="#contact" className="hover:text-[#9b4ed3] transition-colors">Contact</a>
           </div>
@@ -48,32 +56,32 @@ function App() {
 
         <div className="container mx-auto px-6 py-20">
           <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
-          <div className="flex-1">
-  <h1 className="text-5xl font-bold mb-6 leading-tight">
-    <span className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
-      Faheem Wakeel
-    </span>
-    <br />
-    <span className="text-4xl text-gray-300 font-medium">
-      React Native & Web3 Developer
-    </span>
-    <br />
-    <span className="text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400">
-      Building the future of mobile & blockchain
-    </span>
-  </h1>
-  <p className="text-lg text-gray-400 mb-8">
-    Specialized in creating seamless mobile experiences and decentralized applications
-  </p>
-  <div className="flex gap-4">
-    <a href="#contact" className="px-8 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-lg text-white font-medium hover:opacity-90 transition-opacity">
-      Get in touch
-    </a>
-    <a href="#projects" className="px-8 py-3 border border-purple-500 rounded-lg text-purple-500 font-medium hover:bg-purple-500/10 transition-colors">
-      View Projects
-    </a>
-  </div>
-</div>
+            <div className="flex-1">
+              <h1 className="text-5xl font-bold mb-6 leading-tight">
+                <span className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
+                  Faheem Wakeel
+                </span>
+                <br />
+                <span className="text-4xl text-gray-300 font-medium">
+                  React Native & Web3 Developer
+                </span>
+                <br />
+                <span className="text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400">
+                  Building the future of mobile & blockchain
+                </span>
+              </h1>
+              <p className="text-lg text-gray-400 mb-8">
+                Specialized in creating seamless mobile experiences and decentralized applications
+              </p>
+              <div className="flex gap-4">
+                <a href="#contact" className="px-8 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-lg text-white font-medium hover:opacity-90 transition-opacity">
+                  Get in touch
+                </a>
+                <a href="#projects" className="px-8 py-3 border border-purple-500 rounded-lg text-purple-500 font-medium hover:bg-purple-500/10 transition-colors">
+                  View Projects
+                </a>
+              </div>
+            </div>
 
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-[#693B93] to-[#9b4ed3] rounded-full blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
@@ -298,7 +306,7 @@ function App() {
                 tech: ['React Native', 'Web3.js', 'Solidity'],
                 link: 'https://naitram.live'
               },
-             
+
               {
 
                 title: 'magnus capital ',
@@ -354,6 +362,122 @@ function App() {
                 </div>
               </div>
             ))}
+            {/* Services Section */}
+            {/* Services Section */}
+            <div id="services" className="py-20 relative">
+              <div className="absolute inset-0 bg-gradient-to-b from-[#693B93]/10 to-transparent" />
+              <div className="container mx-auto px-6">
+                <h2 className="text-4xl font-bold mb-4 text-center bg-gradient-to-r from-[#9b4ed3] to-[#693B93] bg-clip-text text-transparent">
+                  Development Services
+                </h2>
+                <p className="text-gray-300 text-center mb-16 max-w-2xl mx-auto text-lg">
+                  Crafting digital experiences that bridge innovation and functionality
+                </p>
+
+                <div className="grid grid-cols-1 gap-20">
+                  {[
+                    {
+                      image: mobileAppDevelopment1,
+                      title: 'Mobile App Development',
+                      features: [
+                        'Cross-platform React Native apps',
+                        'Performance optimization',
+                        'Native module integration',
+                        'App store deployment',
+                        'CI/CD pipeline setup'
+                      ],
+                      icon: <Smartphone className="w-8 h-8" />,
+                      gradient: 'from-[#9b4ed3]/80 to-[#693B93]/50'
+                    },
+                    {
+                      image: WalletCreation,
+                      title: 'Blockchain Solutions',
+                      features: [
+                        'Multi-chain wallet development',
+                        'Smart contract auditing',
+                        'NFT marketplace creation',
+                        'DeFi protocol integration',
+                        'Cross-chain bridges'
+                      ],
+                      icon: <Wallet className="w-8 h-8" />,
+                      gradient: 'from-[#693B93]/80 to-[#4a148c]/50'
+                    },
+                    {
+                      image: WebApp,
+                      title: 'Web Development',
+                      features: [
+                        'React/Next.js applications',
+                        'Web3 integration',
+                        'Real-time features',
+                        'SEO optimization',
+                        'Cloud deployment'
+                      ],
+                      icon: <Globe className="w-8 h-8" />,
+                      gradient: 'from-[#9b4ed3]/80 to-[#311b92]/50'
+                    }
+                  ].map((service, i) => (
+                    <div
+                      key={i}
+                      className="group relative overflow-hidden rounded-[2rem] border border-[#693B93]/30 hover:border-[#9b4ed3]/50 transition-all duration-500 shadow-xl shadow-[#693B93]/2 hover:shadow-[#9b4ed3]/20"
+                    >
+                      {/* Image Container with Dynamic Gradient */}
+                      <div className="absolute inset-0 z-0">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-500 filter blur-sm saturate-50"
+                        />
+                        <div className={`absolute inset-0 bg-gradient-to-t ${service.gradient}/90 via-transparent`} />
+                      </div>
+
+                      {/* Content Overlay */}
+                      <div className="relative z-10 p-10 min-h-[600px] flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/70 to-transparent">
+                        <div className="max-w-2xl">
+                          <div className="text-[#9b4ed3] mb-6">
+                            {service.icon}
+                          </div>
+                          <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#9b4ed3] to-white bg-clip-text text-transparent">
+                            {service.title}
+                          </h3>
+                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            {service.features.map((feature, j) => (
+                              <li
+                                key={j}
+                                className="flex items-center text-gray-200 text-lg p-3 rounded-lg bg-[#693B93]/10 hover:bg-[#9b4ed3]/20 transition-colors"
+                              >
+                                <div className="w-2 h-2 rounded-full bg-[#9b4ed3] mr-3 shrink-0" />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                          <div className="flex items-center gap-3 text-[#9b4ed3] font-medium hover:text-[#b974ed] transition-colors cursor-pointer">
+                            <span>Explore Case Studies</span>
+                            <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Service Metrics */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
+                  {[
+                    { number: '50+', label: 'Projects Completed' },
+                    { number: '100%', label: 'Client Satisfaction' },
+                    { number: '4.9/5', label: 'Average Rating' },
+                    { number: '24/7', label: 'Support Available' }
+                  ].map((metric, i) => (
+                    <div key={i} className="p-6 rounded-xl bg-[#693B93]/10 hover:bg-[#9b4ed3]/20 transition-colors">
+                      <div className="text-3xl font-bold bg-gradient-to-r from-[#9b4ed3] to-[#693B93] bg-clip-text text-transparent mb-2">
+                        {metric.number}
+                      </div>
+                      <div className="text-gray-300 text-sm">{metric.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

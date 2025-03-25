@@ -52,3 +52,14 @@ body {
 .rotate-y-12 {
   transform: rotateY(12deg);
 }
+transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(0.25rem);
+}
+
+.group:hover .group-hover\:-translate-y-1 {
+  transform: translateY(-0.25rem);
+}
