@@ -363,124 +363,125 @@ function App() {
             ))}
             {/* Services Section */}
             {/* Services Section */}
-            <div id="services" className="py-20 relative">
-              
-              <div className="container mx-auto px-6">
-                <h2 className="text-4xl font-bold mb-4 text-center bg-gradient-to-r from-[#9b4ed3] to-[#693B93] bg-clip-text text-transparent">
-                  Development Services
-                </h2>
-                <p className="text-gray-300 text-center mb-16 max-w-2xl mx-auto text-lg">
-                  Crafting digital experiences that bridge innovation and functionality
-                </p>
 
-                <div className="grid grid-cols-1 gap-20">
-                  {[
-                    {
-                      image: mobileAppDevelopment1,
-                      title: 'Mobile App Development',
-                      features: [
-                        'Cross-platform React Native apps',
-                        'Performance optimization',
-                        'Native module integration',
-                        'App store / playStore deployment',
-                        'CI/CD pipeline setup'
-                      ],
-                      icon: <Smartphone className="w-8 h-8" />,
-                      gradient: 'from-[#9b4ed3]/80 to-[#693B93]/50'
-                    },
-                    {
-                      image: WalletCreation,
-                      title: 'Blockchain Solutions',
-                      features: [
-                        'Multi-chain wallet development',
-                        'Smart contract Intigerigation',
-                        'NFT marketplace creation',
-                        'DeFi protocol integration',
-                        'Cross-chain bridges'
-                      ],
-                      icon: <Wallet className="w-8 h-8" />,
-                      gradient: 'from-[#693B93]/80 to-[#4a148c]/50'
-                    },
-                    {
-                      image: WebApp,
-                      title: 'Web Development',
-                      features: [
-                        'React/Next.js applications',
-                        'Web3 integration',
-                        'Real-time features',
-                        'SEO optimization',
-                        'Cloud deployment'
-                      ],
-                      icon: <Globe className="w-8 h-8" />,
-                      gradient: 'from-[#9b4ed3]/80 to-[#311b92]/50'
-                    }
-                  ].map((service, i) => (
-                    <div
-                      key={i}
-                      className="group relative overflow-hidden rounded-[2rem] border border-[#693B93]/30 hover:border-[#9b4ed3]/50 transition-all duration-500 shadow-xl shadow-[#693B93]/2 hover:shadow-[#9b4ed3]/20"
-                    >
-                      {/* Image Container with Dynamic Gradient */}
-                      <div className="absolute inset-0 z-0">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-500 filter blur-sm saturate-50"
-                        />
-                        <div className={`absolute inset-0 bg-gradient-to-t ${service.gradient}/90 via-transparent`} />
-                      </div>
+          </div>
 
-                      {/* Content Overlay */}
-                      <div className="relative z-10 p-10 min-h-[600px] flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/70 to-transparent">
-                        <div className="max-w-2xl">
-                          <div className="text-[#9b4ed3] mb-6">
-                            {service.icon}
-                          </div>
-                          <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#9b4ed3] to-white bg-clip-text text-transparent">
-                            {service.title}
-                          </h3>
-                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                            {service.features.map((feature, j) => (
-                              <li
-                                key={j}
-                                className="flex items-center text-gray-200 text-lg p-3 rounded-lg bg-[#693B93]/10 hover:bg-[#9b4ed3]/20 transition-colors"
-                              >
-                                <div className="w-2 h-2 rounded-full bg-[#9b4ed3] mr-3 shrink-0" />
-                                {feature}
-                              </li>
-                            ))}
-                          </ul>
-                          <div className="flex items-center gap-3 text-[#9b4ed3] font-medium hover:text-[#b974ed] transition-colors cursor-pointer">
-                            <span>Explore Case Studies</span>
-                            <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+        </div>
+      </div>
+      <div id="services" className="py-20 relative">
+
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-4 text-center bg-gradient-to-r from-[#9b4ed3] to-[#693B93] bg-clip-text text-transparent">
+            Development Services
+          </h2>
+          <p className="text-gray-300 text-center mb-16 max-w-2xl mx-auto text-lg">
+            Crafting digital experiences that bridge innovation and functionality
+          </p>
+
+          <div className="grid grid-cols-1 gap-20">
+            {[
+              {
+                image: mobileAppDevelopment1,
+                title: 'Mobile App Development',
+                features: [
+                  'Cross-platform React Native apps',
+                  'Performance optimization',
+                  'Native module integration',
+                  'App store / playStore deployment',
+                  'CI/CD pipeline setup'
+                ],
+                icon: <Smartphone className="w-8 h-8" />,
+                gradient: 'from-[#9b4ed3]/80 to-[#693B93]/50'
+              },
+              {
+                image: WalletCreation,
+                title: 'Blockchain Solutions',
+                features: [
+                  'Multi-chain wallet development',
+                  'Smart contract Intigerigation',
+                  'NFT marketplace creation',
+                  'DeFi protocol integration',
+                  'Cross-chain bridges'
+                ],
+                icon: <Wallet className="w-8 h-8" />,
+                gradient: 'from-[#693B93]/80 to-[#4a148c]/50'
+              },
+              {
+                image: WebApp,
+                title: 'Web Development',
+                features: [
+                  'React/Next.js applications',
+                  'Web3 integration',
+                  'Real-time features',
+                  'SEO optimization',
+                  'Cloud deployment'
+                ],
+                icon: <Globe className="w-8 h-8" />,
+                gradient: 'from-[#9b4ed3]/80 to-[#311b92]/50'
+              }
+            ].map((service, i) => (
+              <div
+                key={i}
+                className="group relative overflow-hidden rounded-[2rem] border border-[#693B93]/30 hover:border-[#9b4ed3]/50 transition-all duration-500 shadow-xl shadow-[#693B93]/2 hover:shadow-[#9b4ed3]/20"
+              >
+                {/* Image Container with Dynamic Gradient */}
+                <div className="absolute inset-0 z-0">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-500 filter blur-sm saturate-50"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${service.gradient}/90 via-transparent`} />
                 </div>
 
-                {/* Service Metrics */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
-                  {[
-                    { number: '10+', label: 'Projects Completed' },
-                    { number: '100%', label: 'Client Satisfaction' },
-                    { number: '4.9/5', label: 'Average Rating' },
-                    { number: '24/7', label: 'Support Available' }
-                  ].map((metric, i) => (
-                    <div key={i} className="p-6 rounded-xl bg-[#693B93]/10 hover:bg-[#9b4ed3]/20 transition-colors">
-                      <div className="text-3xl font-bold bg-gradient-to-r from-[#9b4ed3] to-[#693B93] bg-clip-text text-transparent mb-2">
-                        {metric.number}
-                      </div>
-                      <div className="text-gray-300 text-sm">{metric.label}</div>
+                {/* Content Overlay */}
+                <div className="relative z-10 p-10 min-h-[600px] flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/70 to-transparent">
+                  <div className="max-w-2xl">
+                    <div className="text-[#9b4ed3] mb-6">
+                      {service.icon}
                     </div>
-                  ))}
+                    <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#9b4ed3] to-white bg-clip-text text-transparent">
+                      {service.title}
+                    </h3>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                      {service.features.map((feature, j) => (
+                        <li
+                          key={j}
+                          className="flex items-center text-gray-200 text-lg p-3 rounded-lg bg-[#693B93]/10 hover:bg-[#9b4ed3]/20 transition-colors"
+                        >
+                          <div className="w-2 h-2 rounded-full bg-[#9b4ed3] mr-3 shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex items-center gap-3 text-[#9b4ed3] font-medium hover:text-[#b974ed] transition-colors cursor-pointer">
+                      <span>Explore Case Studies</span>
+                      <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* Service Metrics */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
+            {[
+              { number: '10+', label: 'Projects Completed' },
+              { number: '100%', label: 'Client Satisfaction' },
+              { number: '4.9/5', label: 'Average Rating' },
+              { number: '24/7', label: 'Support Available' }
+            ].map((metric, i) => (
+              <div key={i} className="p-6 rounded-xl bg-[#693B93]/10 hover:bg-[#9b4ed3]/20 transition-colors">
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#9b4ed3] to-[#693B93] bg-clip-text text-transparent mb-2">
+                  {metric.number}
+                </div>
+                <div className="text-gray-300 text-sm">{metric.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
       {/* Contact Section */}
       <div id="contact" className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-t from-[#693B93]/10 to-transparent" />
