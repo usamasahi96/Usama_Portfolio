@@ -251,7 +251,7 @@ function App() {
                   { skill: 'React Native Development', level: 90 },
                   { skill: 'Multi-Chain Wallet Development', level: 90 },
                   { skill: 'Web3 & Blockchain', level: 85 },
-                  { skill: 'Smart Contract Development', level: 80 },
+                  { skill: 'Smart Contract Intigeration', level: 70 },
                   { skill: 'NFT Marketplace Development', level: 80 },
                   { skill: 'API Integration & Web3.js', level: 78 },
                   { skill: 'UI/UX Design', level: 75 },
