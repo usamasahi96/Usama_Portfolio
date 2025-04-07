@@ -1,14 +1,14 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
-import myProfileWithBlackbackground3 from './myProfileWithBlackbackground3.jpg';
-import './index.css';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.tsx";
+import myProfileWithBlackbackground3 from "./myProfileWithBlackbackground3.jpeg";
+import "./index.css";
 
 // Function to create a rounded favicon
 const createRoundedFavicon = (imageSrc: string) => {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
-  
+
   const img = new Image();
   img.src = imageSrc;
   img.onload = () => {
@@ -24,7 +24,9 @@ const createRoundedFavicon = (imageSrc: string) => {
       ctx.drawImage(img, 0, 0, size, size);
 
       // Set the generated favicon
-      const faviconLink = document.querySelector("link[rel~='icon']") || document.createElement("link");
+      const faviconLink =
+        document.querySelector("link[rel~='icon']") ||
+        document.createElement("link");
       faviconLink.setAttribute("rel", "icon");
       faviconLink.setAttribute("type", "image/png");
       faviconLink.setAttribute("href", canvas.toDataURL("image/png"));
@@ -37,7 +39,7 @@ const createRoundedFavicon = (imageSrc: string) => {
 // Call the function to create a rounded favicon
 createRoundedFavicon(myProfileWithBlackbackground3);
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
   </StrictMode>
