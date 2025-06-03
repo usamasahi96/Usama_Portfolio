@@ -716,6 +716,7 @@ function App() {
       </div>
 
       {/* Footer */}
+
       <footer className="py-6 border-t border-[#693B93]/20">
         <div className="container mx-auto px-6 text-center text-gray-400">
           © {new Date().getFullYear()} Usama Ali. All rights reserved.
