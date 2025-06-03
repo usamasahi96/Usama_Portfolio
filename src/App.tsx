@@ -458,23 +458,23 @@ function App() {
           </h2>
           <div className="space-y-40">
             {[
-              {
-                title: "Knuckout",
-                subtitle: "Premium Beauty Salon Services",
-                desc: "An app offering premium beauty salon services, including threading, waxing, facials, and more, providing users with enticing grooming experiences.",
-                image: knockout, // Replace with the actual image URL
-                tech: ["Android", "Java"],
-                link: "https://play.google.com/store/apps/details?id=com.knuckout",
-              },
-              {
-                title: "Salonist Partner",
-                subtitle:
-                  "Booking & Scheduling Solution for Beauty Professionals",
-                desc: "A user-friendly booking and scheduling solution designed for beauty and wellness professionals to boost sales and attract new clients.",
-                image: solanist, // Replace with the actual image URL
-                tech: ["Android", "Java"],
-                link: "https://play.google.com/store/apps/details?id=com.salonist",
-              },
+              // {
+              //   title: "Knuckout",
+              //   subtitle: "Premium Beauty Salon Services",
+              //   desc: "An app offering premium beauty salon services, including threading, waxing, facials, and more, providing users with enticing grooming experiences.",
+              //   image: knockout, // Replace with the actual image URL
+              //   tech: ["Android", "Java"],
+              //   link: "https://play.google.com/store/apps/details?id=com.knuckout",
+              // },
+              // {
+              //   title: "Salonist Partner",
+              //   subtitle:
+              //     "Booking & Scheduling Solution for Beauty Professionals",
+              //   desc: "A user-friendly booking and scheduling solution designed for beauty and wellness professionals to boost sales and attract new clients.",
+              //   image: solanist, // Replace with the actual image URL
+              //   tech: ["Android", "Java"],
+              //   link: "https://play.google.com/store/apps/details?id=com.salonist",
+              // },
               {
                 title: "Gaya Wallet",
                 subtitle: "Solana-Based Single-Chain Wallet",
@@ -579,7 +579,7 @@ function App() {
                   "Cross-platform React Native apps",
                   "Performance optimization",
                   "Native module integration",
-                  "App store / playStore deployment",
+                  "App Store / Play Store deployment",
                   "CI/CD pipeline setup",
                 ],
                 icon: <Smartphone className="w-8 h-8" />,
