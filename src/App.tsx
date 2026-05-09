@@ -1,726 +1,502 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
-  Github,
-  ExternalLink,
-  Mail,
-  Linkedin,
-  Code2,
-  Blocks,
-  Wallet,
-  Brain,
-  Database,
-  Globe,
-  Shield,
-  Cpu,
-  Terminal,
-  Layers,
-  GitBranch,
-  Smartphone,
-  Building,
-  Calendar,
   ArrowUpRight,
   Banknote,
-  X,
+  Blocks,
+  Brain,
+  Calendar,
+  Code2,
+  Cpu,
+  Database,
+  Github,
+  GitBranch,
+  Globe,
+  Layers,
+  Linkedin,
+  Mail,
   Menu,
+  Shield,
+  Smartphone,
+  Terminal,
+  Wallet,
+  X,
 } from "lucide-react";
 import naitramImage from "./naitramImage.png";
 import magnusmobileapp from "./magnusmobileapp.png";
 import GayaImage from "./GayaImage.png";
-import solanist from "./solanist.png";
-import knockout from "./knockout.webp";
 import myProfileWithBlackbackground3 from "./myProfileWithBlackbackground3.jpeg";
 import mobileAppDevelopment1 from "./mobileAppDevelopment1.jpg";
 import WalletCreation from "./WalletCreation.jpg";
 import WebApp from "./WebApp.jpg";
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const colors = {
-    color1: "#1a0b26",
-    color2: "#693B93",
-  };
+
+  const navItems = [
+    { href: "#experience", label: "Experience" },
+    { href: "#skills", label: "Expertise" },
+    { href: "#projects", label: "Projects" },
+    { href: "#services", label: "Services" },
+    { href: "#contact", label: "Contact" },
+  ];
+
+  const experiences = [
+    {
+      company: "Blockmob Labs",
+      role: "React Native Web3 Developer",
+      period: "Aug 2024 - Present",
+      description:
+        "Leading end-to-end mobile wallet and Web3 product engineering with a focus on security, reliability, and exceptional UX.",
+      achievements: [
+        "Built single-chain and multi-chain wallet architecture for Ethereum, BSC, Polygon, and Solana.",
+        "Implemented cross-chain swap and bridge workflows for seamless on-chain asset transfers.",
+        "Strengthened account security through encrypted key management and biometric authentication.",
+        "Delivered NFT marketplace features including minting, listing, buying, and auctions.",
+      ],
+    },
+    {
+      company: "Sentax Lab",
+      role: "React Native Developer",
+      period: "Mar 2023 - Jul 2024",
+      description:
+        "Developed high-quality cross-platform applications with strong performance, scalable architecture, and API-heavy product integrations.",
+      achievements: [
+        "Shipped production-ready React Native apps across multiple domains and user segments.",
+        "Integrated third-party and internal APIs to support robust real-time data experiences.",
+        "Implemented Redux and Zustand state patterns based on product complexity and team needs.",
+      ],
+    },
+  ];
+
+  const topSkills = [
+    {
+      icon: <Smartphone className="h-7 w-7" />,
+      title: "React Native",
+      desc: "Premium mobile experiences with native-level polish.",
+      skills: ["iOS & Android", "Native Modules", "Performance Tuning"],
+    },
+    {
+      icon: <Wallet className="h-7 w-7" />,
+      title: "Wallet Development",
+      desc: "Secure single-chain and multi-chain wallet systems.",
+      skills: ["Ethereum", "BSC", "Polygon", "Solana"],
+    },
+    {
+      icon: <Blocks className="h-7 w-7" />,
+      title: "Web3 Products",
+      desc: "Scalable dApps with practical blockchain integrations.",
+      skills: ["Web3.js", "Ethers.js", "WalletConnect", "Smart Contracts"],
+    },
+    {
+      icon: <Banknote className="h-7 w-7" />,
+      title: "NFT Marketplaces",
+      desc: "Marketplaces with minting, listings, and auction flows.",
+      skills: ["ERC-721", "ERC-1155", "IPFS", "Trading Modules"],
+    },
+  ];
+
+  const additionalSkills = [
+    { icon: <Shield className="h-4 w-4" />, label: "Smart Contract Security" },
+    { icon: <GitBranch className="h-4 w-4" />, label: "Git Workflows" },
+    { icon: <Globe className="h-4 w-4" />, label: "REST & GraphQL APIs" },
+    { icon: <Cpu className="h-4 w-4" />, label: "Blockchain API Integration" },
+    { icon: <Database className="h-4 w-4" />, label: "SQL & NoSQL" },
+    { icon: <Layers className="h-4 w-4" />, label: "Redux & Zustand" },
+    { icon: <Terminal className="h-4 w-4" />, label: "TypeScript" },
+    { icon: <Code2 className="h-4 w-4" />, label: "Scalable Architecture" },
+    { icon: <Brain className="h-4 w-4" />, label: "Product-Driven UI/UX" },
+  ];
+
+  const projects = [
+    {
+      title: "Gaya Wallet",
+      subtitle: "Solana-Based Single-Chain Wallet",
+      desc: "A secure mobile wallet for the Solana ecosystem with SOL management, staking, and dApp connectivity.",
+      image: GayaImage,
+      tech: ["React Native", "Solana SDK", "Redux"],
+      link: "https://apps.apple.com/app/gaya-wallet/id123456789",
+    },
+    {
+      title: "Naitram",
+      subtitle: "NFT Ticketing Platform",
+      desc: "A blockchain-first ticketing platform that improves ownership transparency and protects event ticket authenticity.",
+      image: naitramImage,
+      tech: ["React Native", "Web3.js", "Solidity"],
+      link: "https://naitram.live",
+    },
+    {
+      title: "Magnus Capital",
+      subtitle: "Automated Trading System",
+      desc: "Automated trading with real-time market signals, strategy execution, and risk-aware decision systems.",
+      image: magnusmobileapp,
+      tech: ["Node.js", "WebSocket", "MongoDB"],
+      link: "#",
+    },
+  ];
+
+  const services = [
+    {
+      image: mobileAppDevelopment1,
+      title: "Mobile App Development",
+      features: [
+        "Cross-platform React Native apps",
+        "Performance optimization",
+        "Native module integration",
+        "Store deployment and release support",
+      ],
+      icon: <Smartphone className="h-7 w-7" />,
+    },
+    {
+      image: WalletCreation,
+      title: "Blockchain Solutions",
+      features: [
+        "Multi-chain wallet development",
+        "Smart contract integration",
+        "NFT marketplace modules",
+        "DeFi and bridge integrations",
+      ],
+      icon: <Wallet className="h-7 w-7" />,
+    },
+    {
+      image: WebApp,
+      title: "Web Product Development",
+      features: [
+        "React and Next.js applications",
+        "Modern dashboard experiences",
+        "Web3 and real-time integrations",
+        "Cloud deployment architecture",
+      ],
+      icon: <Globe className="h-7 w-7" />,
+    },
+  ];
+
+  const stats = [
+    { number: "20+", label: "Projects Delivered" },
+    { number: "100%", label: "Client Focused" },
+    { number: "4.9/5", label: "Average Rating" },
+    { number: "24/7", label: "Communication" },
+  ];
+
   return (
-    <div className={"min-h-screen bg-[#1a0b26] text-white"}>
-      {/* Hero Section */}
-      <div className="relative">
-        <div
-          className={
-            "absolute inset-0 bg-gradient-to-b from-[#693B93]/20 to-transparent pointer-events-none"
-          }
-        />
-        {/* Blur circles */}
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-[#693B93]/30 rounded-full blur-[120px]" />
-        <div className="absolute top-40 right-1/4 w-72 h-72 bg-[#693B93]/30 rounded-full blur-[120px]" />
+    <div className="min-h-screen bg-[#060A14] text-[#E8ECF3]">
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-[-120px] top-[-80px] h-[380px] w-[380px] rounded-full bg-[#A88B4A]/15 blur-3xl" />
+        <div className="absolute bottom-[-160px] right-[-100px] h-[400px] w-[400px] rounded-full bg-[#3E5C87]/30 blur-3xl" />
+      </div>
 
-        <nav className="container mx-auto px-6 py-6">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <div className="text-2xl font-bold bg-gradient-to-r from-[#693B93] to-[#9b4ed3] bg-clip-text text-transparent">
-              Portfolio
-            </div>
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#060A14]/90 backdrop-blur-xl">
+        <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+          <a
+            href="#"
+            className="text-lg font-semibold tracking-[0.2em] text-[#D4B06A]"
+          >
+            USAMA ALI
+          </a>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex gap-8">
+          <div className="hidden items-center gap-8 text-[0.92rem] font-medium text-[#D5DDE8] md:flex">
+            {navItems.map((item) => (
               <a
-                href="#about"
-                className="hover:text-[#9b4ed3] transition-colors"
+                key={item.label}
+                href={item.href}
+                className="border-b border-transparent pb-1 transition-colors hover:border-[#D4B06A]/60 hover:text-[#E9D5A7]"
               >
-                About
+                {item.label}
               </a>
-              <a
-                href="#experience"
-                className="hover:text-[#9b4ed3] transition-colors"
-              >
-                Experience
-              </a>
-              <a
-                href="#services"
-                className="hover:text-[#9b4ed3] transition-colors"
-              >
-                Services
-              </a>
-              <a
-                href="#projects"
-                className="hover:text-[#9b4ed3] transition-colors"
-              >
-                Projects
-              </a>
-              <a
-                href="#contact"
-                className="hover:text-[#9b4ed3] transition-colors"
-              >
-                Contact
-              </a>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-2xl"
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
+            ))}
           </div>
 
-          {/* Mobile Navigation */}
-          {/* Mobile Navigation */}
-          <div
-            className={`md:hidden flex flex-col  bg-[#693B93]/80 items-center gap-4 mt-4 shadow-lg p-4 rounded-lg transition-all duration-300 backdrop-blur-md bg-white/30 ${
-              isOpen ? "block" : "hidden"
-            }`}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="rounded-md border border-white/20 p-2 text-[#E8ECF3] md:hidden"
+            aria-label="Toggle menu"
           >
-            <a href="#about" className="hover:text-[#9b4ed3] transition-colors">
-              About
-            </a>
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </nav>
+
+        {isOpen && (
+          <div className="mx-6 mb-4 flex flex-col gap-3 rounded-xl border border-white/10 bg-[#0D1422] p-4 md:hidden">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-sm text-[#CBD3DD] transition-colors hover:text-[#D4B06A]"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <section className="mx-auto grid w-full max-w-6xl gap-12 px-6 pb-10 pt-20 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+        <div>
+          <h1 className="mb-5 text-4xl font-bold leading-[1.1] text-white md:text-6xl">
+            Usama Ali
+            <span className="block bg-gradient-to-r from-[#D4B06A] to-[#F0DFB4] bg-clip-text pb-1 text-3xl leading-[1.15] text-transparent md:text-[4.2rem]">
+              React Native & Web3 Developer
+            </span>
+          </h1>
+          <p className="max-w-2xl text-base text-[#C1CBD8] md:text-lg">
+            I craft high-performing mobile products and blockchain platforms with
+            a focus on security, elegant UX, and business outcomes.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="#experience"
-              className="hover:text-[#9b4ed3] transition-colors"
+              href="#contact"
+              className="rounded-lg bg-gradient-to-r from-[#B99757] to-[#DCC18A] px-6 py-3 text-sm font-semibold text-[#0B0F18] transition hover:brightness-105"
             >
-              Experience
-            </a>
-            <a
-              href="#services"
-              className="hover:text-[#9b4ed3] transition-colors"
-            >
-              Services
+              Let&apos;s Work Together
             </a>
             <a
               href="#projects"
-              className="hover:text-[#9b4ed3] transition-colors"
+              className="rounded-lg border border-[#D4B06A]/40 px-6 py-3 text-sm font-semibold text-[#E5D1A2] transition hover:bg-[#D4B06A]/10"
             >
-              Projects
-            </a>
-            <a
-              href="#contact"
-              className="hover:text-[#9b4ed3] transition-colors"
-            >
-              Contact
+              Explore Projects
             </a>
           </div>
-        </nav>
+        </div>
 
-        <div className="container mx-auto px-6 py-20">
-          <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
-            <div className="flex-1">
-              <h1 className="text-5xl font-bold mb-6 leading-tight">
-                <span className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
-                  Usama Ali
-                </span>
-                <br />
-                <span className="text-4xl text-gray-300 font-medium">
-                  React Native & Web3 Developer
-                </span>
-                <br />
-                <span className="text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400">
-                  Building the future of mobile & blockchain
-                </span>
-              </h1>
-              <p className="text-lg text-gray-400 mb-8">
-                Specialized in creating seamless mobile experiences and
-                decentralized applications
-              </p>
-              <div className="flex gap-4">
-                <a
-                  href="#contact"
-                  className="px-8 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-lg text-white font-medium hover:opacity-90 transition-opacity"
-                >
-                  Get in touch
-                </a>
-                <a
-                  href="#projects"
-                  className="px-8 py-3 border border-purple-500 rounded-lg text-purple-500 font-medium hover:bg-purple-500/10 transition-colors"
-                >
-                  View Projects
-                </a>
+        <div className="relative mx-auto w-full max-w-xs">
+          <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-b from-[#D4B06A]/20 to-[#24334A]/40 blur-xl" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-[#D4B06A]/25 bg-[#0F1726] p-2 shadow-2xl shadow-black/50">
+            <img
+              src={myProfileWithBlackbackground3}
+              alt="Usama Ali profile"
+              className="h-[360px] w-full rounded-[1.6rem] object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" className="mx-auto w-full max-w-6xl px-6 py-14">
+        <h2 className="mb-8 text-3xl font-semibold text-white md:text-4xl">
+          Experience
+        </h2>
+        <div className="space-y-6">
+          {experiences.map((exp) => (
+            <article
+              key={exp.company}
+              className="rounded-2xl border border-white/10 bg-[#0D1422]/90 p-7 shadow-lg shadow-black/20"
+            >
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-xl font-semibold text-[#F2E2BB]">
+                    {exp.company}
+                  </h3>
+                  <p className="text-sm text-[#C8D2DF]">{exp.role}</p>
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#D4B06A]/35 bg-[#D4B06A]/10 px-3 py-1 text-xs text-[#E4C98D]">
+                  <Calendar className="h-3.5 w-3.5" />
+                  {exp.period}
+                </div>
               </div>
-            </div>
+              <p className="mb-4 text-[#AEB8C6]">{exp.description}</p>
+              <ul className="grid gap-2 md:grid-cols-2">
+                {exp.achievements.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-[#CBD3DD]">
+                    <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4B06A]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
 
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#693B93] to-[#9b4ed3] rounded-full blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative rounded-full overflow-hidden w-72 h-72 border-2 border-[#693B93]/20">
+      <section id="skills" className="mx-auto w-full max-w-6xl px-6 py-14">
+        <h2 className="mb-3 text-3xl font-semibold text-white md:text-4xl">
+          Technical Expertise
+        </h2>
+        <p className="mb-8 max-w-3xl text-[#AEB8C6]">
+          Deep focus on mobile and blockchain engineering to build products that
+          are technically strong and market-ready.
+        </p>
+
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {topSkills.map((skill) => (
+            <article
+              key={skill.title}
+              className="rounded-2xl border border-white/10 bg-[#0D1422]/90 p-6 transition hover:border-[#D4B06A]/45"
+            >
+              <div className="mb-4 text-[#D4B06A]">{skill.icon}</div>
+              <h3 className="mb-2 text-lg font-semibold text-white">
+                {skill.title}
+              </h3>
+              <p className="mb-4 text-sm text-[#AEB8C6]">{skill.desc}</p>
+              <ul className="space-y-1.5">
+                {skill.skills.map((item) => (
+                  <li key={item} className="text-sm text-[#D5DDE7]">
+                    - {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+          {additionalSkills.map((skill) => (
+            <div
+              key={skill.label}
+              className="flex items-center gap-2 rounded-lg border border-white/10 bg-[#0D1422]/70 px-4 py-3 text-sm text-[#C9D1DC]"
+            >
+              <span className="text-[#D4B06A]">{skill.icon}</span>
+              {skill.label}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="projects" className="mx-auto w-full max-w-6xl px-6 py-14">
+        <h2 className="mb-8 text-3xl font-semibold text-white md:text-4xl">
+          Featured Projects
+        </h2>
+        <div className="space-y-8">
+          {projects.map((project, index) => (
+            <article
+              key={project.title}
+              className={`grid gap-6 rounded-2xl border border-white/10 bg-[#0D1422]/90 p-6 lg:grid-cols-2 lg:items-center ${
+                index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+              }`}
+            >
+              <div className="overflow-hidden rounded-xl border border-white/10">
                 <img
-                  src={myProfileWithBlackbackground3}
-                  alt="Profile"
-                  className="w-full h-full object-cover"
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition duration-500 hover:scale-105"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Work Experience Section */}
-      <div id="experience" className="py-20 relative">
-        <div className="absolute inset-0 bg-[#693B93]/5" />
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">
-            Work Experience
-          </h2>
-          <div className="max-w-4xl mx-auto space-y-12">
-            {[
-              {
-                company: "Blockmob Labs",
-                role: "React Native Web3 Developer",
-                period: "Aug 2024 - Present",
-                description:
-                  "Specialized in developing Web3 applications, focusing on building secure, scalable single-chain and multi-chain wallets, along with NFT marketplace integration.",
-                achievements: [
-                  "Developed both single-chain and multi-chain wallets, enabling seamless asset management across multiple blockchain networks.",
-                  "Implemented support for Ethereum, BSC, Polygon, and Solana, allowing users to manage assets across different ecosystems.",
-                  "Integrated cross-chain swaps and bridge functionalities for smooth asset transfers between networks.",
-                  "Enhanced security with encrypted private key storage, biometric authentication, and WalletConnect integration.",
-                  "Optimized gas fees and transaction processing, reducing costs by 30% through smart contract efficiency improvements.",
-                  "Built an NFT marketplace with minting, buying, selling, and auction features, fully integrated with the multi-chain wallet.",
-                  "Integrated MetaMask, WalletConnect, and custom private key storage solutions for seamless user authentication and transactions.",
-                ],
-              },
-              {
-                company: "Sentax Lab",
-                role: "React Native Developer",
-                period: "Mar 2023 - Jul 2024",
-                description:
-                  "Developed and optimized cross-platform mobile apps using React Native, focusing on performance, UI/UX, and API integrations.",
-                achievements: [
-                  "Worked on various projects involving React Native, leveraging their functionalities to build robust andscalable applications.",
-                  "Oversaw API integration with third-party services,ensuring seamless communication and data exchange between different systems.",
-                  "Implemented state management solutions using Redux for large-scale applications and utilized Zustand for lightweight state management in smaller projects.",
-                ],
-              },
-            ].map((exp, i) => (
-              <div
-                key={i}
-                className="relative group bg-gradient-to-b from-[#693B93]/10 to-transparent p-8 rounded-2xl border border-[#693B93]/20 hover:border-[#693B93]/40 transition-all duration-300"
-              >
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#693B93]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
-                <div className="relative">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-[#9b4ed3]">
-                        {exp.company}
-                      </h3>
-                      <p className="text-lg font-semibold text-gray-200">
-                        {exp.role}
-                      </p>
-                    </div>
-                    <div className="flex items-center text-gray-400">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{exp.period}</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 mb-4">{exp.description}</p>
-                  <ul className="space-y-2">
-                    {exp.achievements.map((achievement, j) => (
-                      <li key={j} className="flex items-center text-gray-300">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#9b4ed3] mr-2" />
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Skills Section */}
-      <div className="py-20 relative">
-        <div className="absolute inset-0 bg-[#693B93]/5" />
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-4 text-center">
-            Technical Expertise
-          </h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            With extensive experience in mobile and blockchain development, I
-            specialize in creating robust, scalable applications that bridge the
-            gap between traditional and decentralized systems.
-          </p>
-
-          {/* Main Skills */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {[
-              {
-                icon: <Smartphone className="w-8 h-8" />,
-                title: "React Native",
-                desc: "Cross-platform mobile development with optimized performance.",
-                skills: [
-                  "iOS & Android",
-                  "Native Modules",
-                  "Performance Optimization",
-                ],
-              },
-              {
-                icon: <Wallet className="w-8 h-8" />,
-                title: "Multi-Chain Wallets",
-                desc: "Development of single-chain and multi-chain wallets with secure asset management.",
-                skills: [
-                  "Ethereum",
-                  "BSC",
-                  "Polygon",
-                  "Solana",
-                  "Cross-Chain Transfers",
-                ],
-              },
-              {
-                icon: <Blocks className="w-8 h-8" />,
-                title: "Web3 & DApps",
-                desc: "Building decentralized applications with blockchain integrations.",
-                skills: [
-                  "Web3.js",
-                  "Ethers.js",
-                  "Smart Contracts",
-                  "WalletConnect",
-                ],
-              },
-              {
-                icon: <Banknote className="w-8 h-8" />,
-                title: "NFT Marketplace",
-                desc: "Development of NFT marketplaces with minting and trading functionalities.",
-                skills: [
-                  "ERC-721 & ERC-1155",
-                  "Auction System",
-                  "IPFS Storage",
-                ],
-              },
-              {
-                icon: <Brain className="w-8 h-8" />,
-                title: "UI/UX",
-                desc: "Designing intuitive and engaging user experiences.",
-                skills: ["Responsive Design", "Animation", "User Research"],
-              },
-            ].map((skill, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-xl bg-gradient-to-b from-[#693B93]/10 to-transparent border border-[#693B93]/20 hover:border-[#693B93]/40 transition-colors group"
-              >
-                <div className="text-[#9b4ed3] mb-4 group-hover:scale-110 transition-transform">
-                  {skill.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
-                <p className="text-gray-400 mb-4">{skill.desc}</p>
-                <ul className="space-y-2">
-                  {skill.skills.map((item, j) => (
-                    <li
-                      key={j}
-                      className="flex items-center text-sm text-gray-300"
+              <div>
+                <p className="mb-2 text-xs tracking-[0.2em] text-[#D4B06A]">
+                  FEATURED
+                </p>
+                <h3 className="text-2xl font-semibold text-white">
+                  {project.title}
+                </h3>
+                <p className="mb-3 text-sm text-[#D8BF85]">{project.subtitle}</p>
+                <p className="mb-4 text-sm text-[#B4BECC]">{project.desc}</p>
+                <div className="mb-4 flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-[#D4B06A]/35 bg-[#D4B06A]/10 px-3 py-1 text-xs text-[#E8D7B1]"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#9b4ed3] mr-2" />
-                      {item}
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={project.link}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#E4C98D] transition hover:text-[#F3DEB2]"
+                >
+                  View project <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="services" className="mx-auto w-full max-w-6xl px-6 py-14">
+        <h2 className="mb-3 text-3xl font-semibold text-white md:text-4xl">
+          Services
+        </h2>
+        <p className="mb-8 max-w-2xl text-[#AEB8C6]">
+          Strategic product engineering support for mobile, Web3, and modern web
+          experiences.
+        </p>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {services.map((service) => (
+            <article
+              key={service.title}
+              className="group relative min-h-[430px] overflow-hidden rounded-2xl border border-white/15"
+            >
+              <div className="absolute inset-0">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="h-full w-full object-cover blur-[2px] transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0A1324]/35 via-[#0A1324]/55 to-[#0A1324]/95" />
+              </div>
+
+              <div className="relative flex h-full flex-col justify-end p-6 backdrop-blur-sm">
+                <div className="mb-3 inline-flex w-fit rounded-lg border border-[#D4B06A]/35 bg-[#D4B06A]/10 p-2 text-[#D4B06A]">
+                  {service.icon}
+                </div>
+                <h3 className="mb-3 text-xl font-semibold text-white md:text-2xl">
+                  {service.title}
+                </h3>
+                <ul className="space-y-2">
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="rounded-md border border-white/10 bg-[#0B1527]/45 px-3 py-2 text-sm text-[#D5DDEA]"
+                    >
+                      {feature}
                     </li>
                   ))}
                 </ul>
               </div>
-            ))}
-          </div>
+            </article>
+          ))}
+        </div>
 
-          {/* Additional Skills */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {[
-              {
-                icon: <Wallet className="w-5 h-5" />,
-                label: "Multi-Chain Wallets",
-              },
-              {
-                icon: <Blocks className="w-5 h-5" />,
-                label: "Web3.js & Ethers.js",
-              },
-              {
-                icon: <Banknote className="w-5 h-5" />,
-                label: "NFT Development",
-              },
-              {
-                icon: <Shield className="w-5 h-5" />,
-                label: "Smart Contract Security",
-              },
-              {
-                icon: <GitBranch className="w-5 h-5" />,
-                label: "Git & Version Control",
-              },
-              {
-                icon: <Globe className="w-5 h-5" />,
-                label: "RESTful & GraphQL APIs",
-              },
-              {
-                icon: <Cpu className="w-5 h-5" />,
-                label: "Blockchain API Integration",
-              },
-              {
-                icon: <Database className="w-5 h-5" />,
-                label: "SQL & NoSQL Databases",
-              },
-              {
-                icon: <Layers className="w-5 h-5" />,
-                label: "Redux & State Management",
-              },
-              {
-                icon: <Terminal className="w-5 h-5" />,
-                label: "TypeScript & JavaScript",
-              },
-              {
-                icon: <Code2 className="w-5 h-5" />,
-                label: "Clean & Scalable Code",
-              },
-            ].map((skill, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-2 p-3 rounded-lg bg-[#693B93]/10 hover:bg-[#693B93]/20 transition-colors"
-              >
-                <div className="text-[#9b4ed3]">{skill.icon}</div>
-                <span className="text-sm">{skill.label}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Experience Level */}
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-[#693B93]/10 rounded-xl p-6 border border-[#693B93]/20">
-              <h3 className="text-xl font-semibold mb-4 text-center">
-                Experience Level
-              </h3>
-              <div className="space-y-4">
-                {[
-                  { skill: "React Native Development", level: 90 },
-                  { skill: "Multi-Chain Wallet Development", level: 90 },
-                  { skill: "Web3 & Blockchain", level: 85 },
-                  { skill: "Smart Contract Intigeration", level: 70 },
-                  { skill: "NFT Marketplace Development", level: 80 },
-                  { skill: "API Integration & Web3.js", level: 78 },
-                  { skill: "UI/UX Design", level: 75 },
-                  { skill: "Performance Optimization", level: 75 },
-                ].map((item, i) => (
-                  <div key={i}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm text-gray-300">
-                        {item.skill}
-                      </span>
-                      <span className="text-sm text-[#9b4ed3]">
-                        {item.level}%
-                      </span>
-                    </div>
-                    <div className="h-2 bg-[#693B93]/20 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-[#693B93] to-[#9b4ed3] rounded-full"
-                        style={{ width: `${item.level}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <div className="mt-8 grid grid-cols-2 gap-4 text-center md:grid-cols-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-xl border border-white/10 bg-[#0D1422]/80 p-5"
+            >
+              <p className="text-2xl font-bold text-[#E8CF9C]">{stat.number}</p>
+              <p className="text-xs text-[#AAB4C2]">{stat.label}</p>
             </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </section>
 
-      {/* Projects Section */}
-      <div id="projects" className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-16 text-center">
-            Featured Projects
-          </h2>
-          <div className="space-y-40">
-            {[
-              // {
-              //   title: "Knuckout",
-              //   subtitle: "Premium Beauty Salon Services",
-              //   desc: "An app offering premium beauty salon services, including threading, waxing, facials, and more, providing users with enticing grooming experiences.",
-              //   image: knockout, // Replace with the actual image URL
-              //   tech: ["Android", "Java"],
-              //   link: "https://play.google.com/store/apps/details?id=com.knuckout",
-              // },
-              // {
-              //   title: "Salonist Partner",
-              //   subtitle:
-              //     "Booking & Scheduling Solution for Beauty Professionals",
-              //   desc: "A user-friendly booking and scheduling solution designed for beauty and wellness professionals to boost sales and attract new clients.",
-              //   image: solanist, // Replace with the actual image URL
-              //   tech: ["Android", "Java"],
-              //   link: "https://play.google.com/store/apps/details?id=com.salonist",
-              // },
-              {
-                title: "Gaya Wallet",
-                subtitle: "Solana-Based Single-Chain Wallet",
-                desc: "A secure and user-friendly mobile wallet exclusively for the Solana blockchain. Features include SOL token management, staking capabilities, and seamless integration with Solana-based decentralized applications (dApps).",
-                image: GayaImage, // Replace with the actual image URL
-                tech: ["React Native", "Solana SDK", "Redux"],
-                link: "https://apps.apple.com/app/gaya-wallet/id123456789", // Replace with the actual App Store link
-              },
-              {
-                title: "Naitram",
-                subtitle: "NFT Ticketing Platform",
-                desc: "A cutting-edge platform revolutionizing event ticketing through NFT technology, ensuring secure and transparent ticket sales, and enhancing attendee experiences.",
-                image: naitramImage,
-                tech: ["React Native", "Web3.js", "Solidity"],
-                link: "https://naitram.live",
-              },
-
-              {
-                title: "magnus capital ",
-                subtitle: "Automated Trading System",
-                desc: "Automated trading bot with custom strategies and real-time market analysis. Implements advanced algorithms for market prediction and risk management.",
-                image: magnusmobileapp,
-                tech: ["Node.js", "WebSocket", "MongoDB"],
-                link: "#",
-              },
-            ].map((project, i) => (
-              <div
-                key={i}
-                className={`flex flex-col ${
-                  i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } gap-16 items-center opacity-0 animate-fade-in`}
-                style={{ animationDelay: `${i * 200}ms` }}
-              >
-                <div className="flex-1 relative group perspective">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#693B93] to-[#9b4ed3] opacity-0 group-hover:opacity-20 transition-opacity rounded-xl" />
-                  <div className="relative transform group-hover:rotate-y-12 transition-transform duration-500">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full rounded-xl shadow-2xl border border-[#693B93]/20"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl" />
-                  </div>
-                </div>
-                <div className="flex-1 space-y-6">
-                  <div>
-                    <div className="text-sm text-[#9b4ed3] font-medium mb-2 flex items-center gap-2">
-                      Featured Project
-                      <div className="w-12 h-[1px] bg-[#9b4ed3]" />
-                    </div>
-                    <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-xl text-[#9b4ed3]/80">
-                      {project.subtitle}
-                    </p>
-                  </div>
-                  <div className="bg-[#693B93]/10 p-6 rounded-xl backdrop-blur-sm">
-                    <p className="text-gray-300 leading-relaxed">
-                      {project.desc}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    {project.tech.map((tech, j) => (
-                      <span
-                        key={j}
-                        className="px-4 py-2 text-sm rounded-full bg-[#693B93]/10 text-[#9b4ed3] border border-[#693B93]/20 hover:border-[#693B93]/40 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={project.link}
-                    className="inline-flex items-center gap-2 text-[#9b4ed3] hover:text-[#b974ed] transition-colors group"
-                  >
-                    View Project
-                    <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </a>
-                </div>
-              </div>
-            ))}
-            {/* Services Section */}
-            {/* Services Section */}
-          </div>
-        </div>
-      </div>
-      <div id="services" className="py-20 relative">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-4 text-center bg-gradient-to-r from-[#9b4ed3] to-[#693B93] bg-clip-text text-transparent">
-            Development Services
-          </h2>
-          <p className="text-gray-300 text-center mb-16 max-w-2xl mx-auto text-lg">
-            Crafting digital experiences that bridge innovation and
-            functionality
+      <section id="contact" className="mx-auto w-full max-w-6xl px-6 pb-16 pt-14">
+        <div className="rounded-3xl border border-[#D4B06A]/30 bg-gradient-to-r from-[#0D1422] via-[#111B2E] to-[#0E1525] p-8 text-center md:p-12">
+          <h2 className="mb-3 text-3xl font-semibold text-white">Get In Touch</h2>
+          <p className="mx-auto mb-6 max-w-xl text-[#B7C1CE]">
+            Looking for a developer who can deliver polished mobile and Web3
+            products? Let&apos;s discuss your next build.
           </p>
-
-          <div className="grid grid-cols-1 gap-20">
-            {[
-              {
-                image: mobileAppDevelopment1,
-                title: "Mobile App Development",
-                features: [
-                  "Cross-platform React Native apps",
-                  "Performance optimization",
-                  "Native module integration",
-                  "App Store / Play Store deployment",
-                  "CI/CD pipeline setup",
-                ],
-                icon: <Smartphone className="w-8 h-8" />,
-                gradient: "from-[#9b4ed3]/80 to-[#693B93]/50",
-              },
-              {
-                image: WalletCreation,
-                title: "Blockchain Solutions",
-                features: [
-                  "Multi-chain wallet development",
-                  "Smart contract Intigerigation",
-                  "NFT marketplace creation",
-                  "DeFi protocol integration",
-                  "Cross-chain bridges",
-                ],
-                icon: <Wallet className="w-8 h-8" />,
-                gradient: "from-[#693B93]/80 to-[#4a148c]/50",
-              },
-              {
-                image: WebApp,
-                title: "Web Development",
-                features: [
-                  "React/Next.js applications",
-                  "Web3 integration",
-                  "Real-time features",
-                  "SEO optimization",
-                  "Cloud deployment",
-                ],
-                icon: <Globe className="w-8 h-8" />,
-                gradient: "from-[#9b4ed3]/80 to-[#311b92]/50",
-              },
-            ].map((service, i) => (
-              <div
-                key={i}
-                className="group relative overflow-hidden rounded-[2rem] border border-[#693B93]/30 hover:border-[#9b4ed3]/50 transition-all duration-500 shadow-xl shadow-[#693B93]/2 hover:shadow-[#9b4ed3]/20"
-              >
-                {/* Image Container with Dynamic Gradient */}
-                <div className="absolute inset-0 z-0">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-500 filter blur-sm saturate-50"
-                  />
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-t ${service.gradient}/90 via-transparent`}
-                  />
-                </div>
-
-                {/* Content Overlay */}
-                <div className="relative z-10 p-10 min-h-[600px] flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/70 to-transparent">
-                  <div className="max-w-2xl">
-                    <div className="text-[#9b4ed3] mb-6">{service.icon}</div>
-                    <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#9b4ed3] to-white bg-clip-text text-transparent">
-                      {service.title}
-                    </h3>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                      {service.features.map((feature, j) => (
-                        <li
-                          key={j}
-                          className="flex items-center text-gray-200 text-lg p-3 rounded-lg bg-[#693B93]/10 hover:bg-[#9b4ed3]/20 transition-colors"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-[#9b4ed3] mr-3 shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex items-center gap-3 text-[#9b4ed3] font-medium hover:text-[#b974ed] transition-colors cursor-pointer">
-                      <span>Explore Case Studies</span>
-                      <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Service Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
-            {[
-              { number: "20+", label: "Projects Completed" },
-              { number: "100%", label: "Client Satisfaction" },
-              { number: "4.9/5", label: "Average Rating" },
-              { number: "24/7", label: "Support Available" },
-            ].map((metric, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-xl bg-[#693B93]/10 hover:bg-[#9b4ed3]/20 transition-colors"
-              >
-                <div className="text-3xl font-bold bg-gradient-to-r from-[#9b4ed3] to-[#693B93] bg-clip-text text-transparent mb-2">
-                  {metric.number}
-                </div>
-                <div className="text-gray-300 text-sm">{metric.label}</div>
-              </div>
-            ))}
+          <div className="flex justify-center gap-5">
+            <a
+              href="https://github.com/usamasahi96"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/20 p-3 text-[#D5DDE8] transition hover:border-[#D4B06A]/50 hover:text-[#EBD6A8]"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/usama-ali-867567268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/20 p-3 text-[#D5DDE8] transition hover:border-[#D4B06A]/50 hover:text-[#EBD6A8]"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a
+              href="mailto:usamaalisahi@gmail.com"
+              className="rounded-full border border-white/20 p-3 text-[#D5DDE8] transition hover:border-[#D4B06A]/50 hover:text-[#EBD6A8]"
+            >
+              <Mail className="h-5 w-5" />
+            </a>
           </div>
         </div>
-      </div>
-      {/* Contact Section */}
-      <div id="contact" className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-[#693B93]/10 to-transparent" />
-        <div className="container mx-auto px-6 relative">
-          <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
-          <div className="max-w-xl mx-auto text-center">
-            <p className="text-gray-300 mb-8">
-              Interested in working together? Let's discuss your project and see
-              how I can help.
-            </p>
-            <div className="flex justify-center gap-6">
-              <a
-                href="https://github.com/usamasahi96"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#9b4ed3] transition-colors"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/usama-ali-867567268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#9b4ed3] transition-colors"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="mailto:usamaalisahi@gmail.com"
-                className="text-gray-400 hover:text-[#9b4ed3] transition-colors"
-              >
-                <Mail className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      {/* Footer */}
-
-      <footer className="py-6 border-t border-[#693B93]/20">
-        <div className="container mx-auto px-6 text-center text-gray-400">
+      <footer className="border-t border-white/10 py-6">
+        <p className="text-center text-sm text-[#95A0AF]">
           © {new Date().getFullYear()} Usama Ali. All rights reserved.
-        </div>
+        </p>
       </footer>
     </div>
   );

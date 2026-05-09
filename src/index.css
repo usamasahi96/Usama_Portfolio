@@ -17,16 +17,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #020420;
+  background: #0b1220;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #693B93;
+  background: linear-gradient(180deg, #d4b06a 0%, #b99757 100%);
   border-radius: 4px;
+  border: 1px solid #1a2438;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9b4ed3;
+  background: linear-gradient(180deg, #d8bc80 0%, #bc9b5f 100%);
 }
 
 /* Animations */
